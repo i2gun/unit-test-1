@@ -6,7 +6,6 @@ import java.util.List;
 public class Shop {
     private List<Product> products;
 
-    // Геттеры, сеттеры:
     public List<Product> getProducts() {
         return products;
     }
@@ -16,14 +15,13 @@ public class Shop {
     }
 
     // Метод должен вернуть отсортированный по возрастанию по цене список продуктов
-    public List<Product> sortProductsByPrice() {
-        // Допишите реализацию метода самостоятельно
-        return null;
+    public void sortProductsByPrice() {
+        products.sort(Comparator.comparingInt(Product::getCost));
     }
 
     // Метод должен вернуть самый дорогой продукт
     public Product getMostExpensiveProduct() {
-        // Допишите реализацию метода самостоятельно
+        products.stream().max(Comparator.comparingInt(Product::getCost));
         return null;
     }
 
