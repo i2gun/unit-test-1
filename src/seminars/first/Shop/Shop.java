@@ -21,8 +21,6 @@ public class Shop {
 
     // Метод должен вернуть самый дорогой продукт
     public Product getMostExpensiveProduct() {
-        products.stream().max(Comparator.comparingInt(Product::getCost));
-        return null;
+        return products.stream().max(Comparator.comparingInt(Product::getCost)).orElse(null);
     }
-
 }
